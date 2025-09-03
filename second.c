@@ -1,0 +1,3 @@
+int blank(void){
+    // Nothing
+}
