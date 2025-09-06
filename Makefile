@@ -28,4 +28,4 @@ all: firmware.elf
 .PHONY: clean all
 
 clean:
-	rm -f hello.txt *.s *.o *.i
+	rm -f hello.txt *.s *.o *.i *.elf
