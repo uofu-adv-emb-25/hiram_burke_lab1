@@ -14,7 +14,18 @@ AS=arm-none-eabi-as
 %.o: %.s
 	$(AS) $< -o $@
 
-.PHONY: clean
+
+LD=arm-none-eabi-ld
+SRC=main.c second.c
+OBJS=$(patsubst %.c,%.o,$(SRC))
+
+firmware.elf: $(OBJS)
+	$(LD) -o $@ $^
+
+
+all: firmware.elf
+
+.PHONY: clean all
 
 clean:
 	rm -f hello.txt *.s *.o *.i
